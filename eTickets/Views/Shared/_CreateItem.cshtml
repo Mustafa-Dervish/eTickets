@@ -1,0 +1,12 @@
+﻿@model string;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <div class="text-white">
+        <a asp-controller="@Model" asp-action="Create" class="btn btn-warning" style="position:fixed;right:25px;bottom:65px">
+            <i class="bi bi-plus-circle"></i>@localizer["Add New"]
+        </a>
+
+    </div>
+}
